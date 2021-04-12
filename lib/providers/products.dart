@@ -1,5 +1,6 @@
 import 'dart:convert';
 
+import 'package:app_http_requisitions/exceptions/http_exception.dart';
 import 'package:flutter/material.dart';
 import 'package:http/http.dart' as http;
 import './product.dart';
@@ -94,6 +95,7 @@ class Products with ChangeNotifier {
       if (response.statusCode >= 400) {
         _items.insert(index, product);
         notifyListeners();
+        throw HttpException('Ocorreu um erro na exclusão do produto.');
       }
     }
   }
