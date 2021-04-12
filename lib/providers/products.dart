@@ -1,13 +1,13 @@
 import 'dart:convert';
 
 import 'package:app_http_requisitions/exceptions/http_exception.dart';
+import 'package:app_http_requisitions/utils/constants.dart';
 import 'package:flutter/material.dart';
 import 'package:http/http.dart' as http;
 import './product.dart';
 
 class Products with ChangeNotifier {
-  final String _baseUrl =
-      'https://flutter-cod3r-bb57a-default-rtdb.firebaseio.com/products';
+  final String _baseUrl = '${Constants.BASE_API_URL}/products';
   List<Product> _items = [];
 
   List<Product> get items => [..._items];

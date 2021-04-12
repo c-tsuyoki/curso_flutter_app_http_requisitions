@@ -1,5 +1,6 @@
 import 'dart:convert';
 
+import 'package:app_http_requisitions/utils/constants.dart';
 import 'package:flutter/material.dart';
 import 'package:http/http.dart' as http;
 
@@ -20,8 +21,7 @@ class Order {
 }
 
 class Orders with ChangeNotifier {
-  final String _baseUrl =
-      'https://flutter-cod3r-bb57a-default-rtdb.firebaseio.com/orders';
+  final String _baseUrl = '${Constants.BASE_API_URL}/orders';
   List<Order> _items = [];
 
   List<Order> get items {
